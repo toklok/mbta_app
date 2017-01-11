@@ -14,10 +14,10 @@ browser, I configured Chrome using [`Stack Overflow`](https://developer.mozilla.
 
 You could visit [`MBTA Developer Portal`](http://realtime.mbta.com/Portal/Home/Download) and grab the Open Development Key to authenticate and use the API for development purpose only.  
 
-OR I COULD
-==========
+OR
+==
 
-Create a reverse proxy as the server and fetch it and return for the client.  I could use a service like [`crossorigin service`](https://crossorigin.me/) to make this app simple.
+Create a reverse proxy as the server and fetch it and return for the client.  I could use a service like [`crossorigin service`](https://cors-anywhere.herokuapp.com) to make this app simple or I could have even made Elixir a [`CORS proxy`](https://github.com/Dania02525/cowboycors)
 
 ## Learn more
 

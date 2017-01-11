@@ -4,10 +4,9 @@ import { Socket } from "phoenix";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './components/main.js'
-
-require('/home/jcurtis/mbta_app/web/static/css/app.scss')
+require('../css/app.scss');
 
 ReactDOM.render(
-    <Main/>,
+    <Main />,
     document.getElementById('root')
 );
