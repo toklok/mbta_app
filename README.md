@@ -8,11 +8,16 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4443`](http://localhost:4443) from your browser.
 
-Go to [`Phoenix and SSL localhost`](https://ohanhi.github.io/phoenix-ssl-localhost.html) to create a self-signed signature so we can use [`Geo Location`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation), and
+Go to [`Phoenix and SSL localhost`](https://ohanhi.github.io/phoenix-ssl-localhost.html) to create a self-signed signature so we could potentially use [`Geo Location`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation), and
 [`Phoenix documentation for SSL`](http://www.phoenixframework.org/docs/configuration-for-ssl).  You will need to configure Chrome if that is your
 browser, I configured Chrome using [`Stack Overflow`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) or you could go as far as [`Routing securely with Phoenix Framework`](https://kronicdeth.github.io/routing-securely-with-phoenix-framework/#/).
 
-You can visit [`MBTA Developer Portal`](http://realtime.mbta.com/Portal/Home/Download) and grab the Open Development Key to also try out the application.  
+You could visit [`MBTA Developer Portal`](http://realtime.mbta.com/Portal/Home/Download) and grab the Open Development Key to authenticate and use the API for development purpose only.  
+
+OR I COULD
+==========
+
+Create a reverse proxy as the server and fetch it and return for the client.  I could use a service like [`crossorigin service`](https://crossorigin.me/) to make this app simple.
 
 ## Learn more
 
