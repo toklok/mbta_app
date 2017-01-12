@@ -3,7 +3,8 @@ import "phoenix_html";
 import { Socket } from "phoenix";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './components/main.js'
+import Main from './components/main';
+
 require('../css/app.scss');
 
 ReactDOM.render(
