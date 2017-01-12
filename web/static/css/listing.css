@@ -2,3 +2,20 @@
   font-size: 28px;
   text-align: center;
 }
+
+.trip {
+  text-align: center;
+}
+
+.destination {
+  text-align: center;
+  font-size: 22px;
+}
+
+.status {
+  text-align: center;
+}
+
+.timestamp {
+  text-align: center;
+}

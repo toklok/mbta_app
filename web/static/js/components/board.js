@@ -25,7 +25,8 @@ class Board extends React.Component {
 
     render() {
         return (
-
+          <div>
+            <h1 className="boarding-h1">MBTA Live Train Departures</h1>
             <ul>
             {
               this.state.csvData.map((key, index) => {
@@ -34,7 +35,7 @@ class Board extends React.Component {
               )})
             }
             </ul>
-          
+          </div>
             )
     }
 }
