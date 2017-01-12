@@ -2,7 +2,13 @@ import React from 'react';
 
 const Listing = (props) => {
   return (
-    <div>Works</div>
+    <div>
+      { props.timestamp }
+      { props.origin }
+      { props.trip }
+      { props.destination }
+      { props.status }
+    </div>
   )
 };
 
