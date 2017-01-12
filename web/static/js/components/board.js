@@ -25,6 +25,7 @@ class Board extends React.Component {
 
     render() {
         return (
+
             <ul>
             {
               this.state.csvData.map((key, index) => {
@@ -33,6 +34,7 @@ class Board extends React.Component {
               )})
             }
             </ul>
+          
             )
     }
 }
