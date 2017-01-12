@@ -1,2 +1,2 @@
-webpack --watch-stdin --progress --color
+webpack
 mix phoenix.digest
