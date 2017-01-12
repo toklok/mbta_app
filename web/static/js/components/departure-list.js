@@ -12,7 +12,6 @@ const Listing = (props) => {
         (props.status === 'On Time') ? <span> On Time</span> : <span> { props.status }</span>
       }
       </h3>
-      <hr/>
     </li>
   )
 };
