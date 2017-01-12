@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import { csvParse } from 'd3-dsv';
+import Listing from './departure-list';
 
-class Main extends React.Component {
+class Board extends React.Component {
     constructor(props) {
         super(props);
         this.rootURL = 'https://cors-anywhere.herokuapp.com/http://developer.mbta.com/lib/gtrtfs/Departures.csv';
-
         this.state = {
           csvData: []
         };
@@ -15,9 +15,8 @@ class Main extends React.Component {
     componentDidMount() {
         axios.get(this.rootURL)
             .then((response) => {
-              const csvData = csvParse(response.data);
               this.setState({
-                csvData: csvData
+                csvData: csvParse(response.data)
               })
             })
     }
@@ -25,10 +24,10 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello World!</h1>
+                <Listing />
             </div>
             )
     }
 }
 
-export default Main;
+export default Board;

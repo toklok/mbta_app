@@ -3,11 +3,11 @@ import "phoenix_html";
 import { Socket } from "phoenix";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './components/main';
+import Board from './components/board';
 
 require('../css/app.scss');
 
 ReactDOM.render(
-    <Main />,
+    <Board />,
     document.getElementById('root')
 );
