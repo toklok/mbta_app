@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { csvParse } from 'd3-dsv';
+import { csvParse } from 'd3';
 import Listing from './departure-list';
 
 class Board extends React.Component {
