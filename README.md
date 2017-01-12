@@ -19,6 +19,14 @@ OR
 
 Create a reverse proxy as the server and fetch it and return for the client.  I could use a service like [`crossorigin service`](https://cors-anywhere.herokuapp.com) to make this app simple or I could have even made Elixir a [`CORS proxy`](https://github.com/Dania02525/cowboycors)
 
+
+Front End
+=========
+
+I used sass to import other CSS files and for use of variables.
+
+Is it semantically correct to add in elements inside an `<li><span>Hello</span></li>`?  [`Yes it is`](http://stackoverflow.com/questions/4967976/what-are-the-allowed-tags-inside-a-li)
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/

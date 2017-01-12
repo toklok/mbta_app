@@ -25,13 +25,14 @@ class Board extends React.Component {
 
     render() {
         return (
-            <div>
+            <ul>
             {
               this.state.csvData.map((key, index) => {
-                return <Listing key={ index } timestamp={ key.TimeStamp } origin={ key.Origin } trip={ key.Trip } destination={ key.Destination } status={ key.Status }/>
-              })
+                return (
+                <Listing key={ index } timestamp={ key.TimeStamp } origin={ key.Origin } trip={ key.Trip } destination={ key.Destination } status={ key.Status }/>
+              )})
             }
-            </div>
+            </ul>
             )
     }
 }
