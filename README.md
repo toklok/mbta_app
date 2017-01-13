@@ -1,4 +1,4 @@
-# MBTA Real-time application.
+  # MBTA Real-time application.
 
 To start your Phoenix app:
 
@@ -10,6 +10,7 @@ Now you can visit [`localhost:4443`](http://localhost:4443) from your browser.
 
 You can also visit [`The Heroku Deployment`](https://intense-anchorage-11907.herokuapp.com/) from your browser.
 
+For devele
 Go to [`Phoenix and SSL localhost`](https://ohanhi.github.io/phoenix-ssl-localhost.html) to create a self-signed signature so we could potentially use [`Geo Location`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation), and
 [`Phoenix documentation for SSL`](http://www.phoenixframework.org/docs/configuration-for-ssl).  You will need to configure Chrome if that is your
 browser, I configured Chrome using [`Stack Overflow`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) or you could go as far as [`Routing securely with Phoenix Framework`](https://kronicdeth.github.io/routing-securely-with-phoenix-framework/#/).

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { csvParse } from 'd3';
 import Listing from './departure-list';
+import sortBy from 'lodash.sortby';
 
 class Board extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Board extends React.Component {
           loading: true,
           csvData: []
         };
+        this.sortTrainDestination = this.sortTrainDestination.bind(this);
     }
 
     componentDidMount() {
@@ -23,10 +25,19 @@ class Board extends React.Component {
             })
       }
 
+
+    sortTrainDestination(dest) {
+      let sortedArray = [];
+      //We sort with the Lodash utility, send the results to an array and then return the new state.
+      sortBy(this.state.csvData,  (o) => { if (o.Destination === ''+ dest +'') sortedArray.push(o)}  );
+      return this.setState({ csvData: sortedArray });
+    }
+
     render() {
         return (
           <div>
             <h1 className="boarding-h1">MBTA Live Train Departures</h1>
+            <button onClick={ () => {this.sortTrainDestination('Rockport') }}>Click Here</button>
             <ul>
             {
               this.state.csvData.map((key, index) => {
