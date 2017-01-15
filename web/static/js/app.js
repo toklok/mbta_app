@@ -4,8 +4,7 @@ import { Socket } from "phoenix";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Board from './components/board';
-
-require('../css/app.scss');
+import '../css/app.scss';
 
 ReactDOM.render(
     <Board />,

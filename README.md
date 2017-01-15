@@ -4,6 +4,7 @@ To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
   * Install Node.js dependencies with `npm install`
+  * Generate self-signed certificate and change SSL location in config/dev.exs
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4443`](http://localhost:4443) from your browser.
