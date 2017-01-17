@@ -1,27 +1,35 @@
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
-  debug: true,
-  entry: './web/static/js/app.js',
+  entry: {
+    app: [
+    './web/static/js/app.js',
+    './web/static/js/components/board.js',
+    './web/static/js/components/departure-list.js'
+  ]
+  },
   output: {
     path: './priv/static/js',
     filename: 'app.js'
   },
   plugins: [
-    new ExtractTextPlugin('../css/app.css')
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
   module: {
     loaders: [
       {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        loader: 'babel'
+        test: /\.js$/,
+        use: [{
+          loader: 'babel-loader',
+        }],
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style','css?sourceMap!sass?sourceMap')
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
-  ]
-}
-}
+    ],
+  },
+};
