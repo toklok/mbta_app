@@ -11,17 +11,22 @@ class Board extends React.Component {
         this.rootURL = 'https://cors-anywhere.herokuapp.com/http://developer.mbta.com/lib/gtrtfs/Departures.csv';
         this.state = {
           loading: true,
-          csvData: []
+          csvData: [],
+          currentDest: []
         };
 
     }
 
     componentDidMount() {
+      let destinations = [];
         axios.get(this.rootURL)
             .then((response) => {
               this.setState({
                 loading: false,
-                csvData: csvParse(response.data)
+                csvData: csvParse(response.data),
+                currentDest: sortBy(csvParse(response.data),  [(o) => { destinations.push(o.Destination) }])}
+                , () => {
+                return this.setState({ currentDest: destinations })
               })
             })
       }
@@ -30,7 +35,7 @@ class Board extends React.Component {
     sortTrainDestination(dest) {
       let sortedArray = [];
       //We sort with the Lodash utility, send the results to an array and then return the new state.
-      sortBy(this.state.csvData,  (o) => { (o.Destination === ''+ dest +'') ? sortedArray.push(o) : <h1>No Train</h1> }  );
+      sortBy(this.state.csvData,  (o) => { (o.Destination === ''+ dest +'') ? sortedArray.push(o) : this.setState({ csvData: [] })}  );
       return this.setState({ csvData: sortedArray });
     }
 
