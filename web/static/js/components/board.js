@@ -17,6 +17,12 @@ class Board extends React.Component {
 
     }
 
+    uniq(a) {
+        return a.sort().filter(function(item, pos, ary) {
+            return !pos || item != ary[pos - 1];
+        })
+    }
+
     componentDidMount() {
         //empty array to contain current destinations
         let destinations = [];
@@ -31,7 +37,7 @@ class Board extends React.Component {
                 ])
             }, () => {
                 //build array and then on callback, send to state object.
-                return this.setState({currentDest: destinations})
+                return this.setState({currentDest: this.uniq(destinations)})
             })
         })
     }
@@ -70,7 +76,7 @@ class Board extends React.Component {
                     <time className="currentTime">{`${moment().format('h:mm:ss A')}`}</time>
                     <p>Filter By available location:</p>
                 </section>
-                <button style={{marginTop: '10px', marginLeft: '10px'}}className={this.state.hideLoc
+                <button style={{marginTop: '10px', marginLeft: '10px'}} className={this.state.hideLoc
                     ? ''
                     : 'hidden'} onClick={() => { this.buildData() }}>Go Back</button>
                 <section className={this.state.hideLoc
