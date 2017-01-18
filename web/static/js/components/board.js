@@ -18,15 +18,18 @@ class Board extends React.Component {
     }
 
     componentDidMount() {
+      //empty array to contain current destinations
       let destinations = [];
         axios.get(this.rootURL)
             .then((response) => {
               this.setState({
                 loading: false,
+                hideLoc: false,
                 csvData: csvParse(response.data),
                 currentDest: sortBy(csvParse(response.data),  [(o) => { destinations.push(o.Destination) }])}
                 , () => {
-                return this.setState({ currentDest: destinations })
+                  //build array and then on callback, send to state object.
+                  return this.setState({ currentDest: destinations })
               })
             })
       }
@@ -45,9 +48,22 @@ class Board extends React.Component {
           <section className="boarding-header">
             <h1 className="boarding-h1">MBTA Live Train Departures</h1>
           </section>
-          <section className="boarding-controls">
-          <button onClick={ () => { this.sortTrainDestination('Rockport') }}>Click Here</button>
+          <section className="boarding-currentTime">
+          <span>Last Checked</span>
+          <time>{`${moment().format('h:mm:ss A')}`}</time>
           </section>
+          <section className={this.state.hideLoc ? 'hidden' : ''}>
+          <ul>
+          {
+            this.state.currentDest.map((key, index) => {
+              return (
+                <li key={ index }><button onClick={ () => { this.sortTrainDestination(key); this.setState({ hideLoc: true })}}>{`${key}`}</button></li>
+              )
+            })
+          }
+          </ul>
+          </section>
+          <section className="boarding-listing">
             <ul>
             {
               this.state.csvData.map((key, index) => {
@@ -56,8 +72,9 @@ class Board extends React.Component {
               )})
             }
             </ul>
-          </div>
-            )
+          </section>
+        </div>
+        )
     }
 }
 

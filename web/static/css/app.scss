@@ -38,3 +38,8 @@ li:nth-child(even) {
   margin-bottom: 10px;
   background: rgba(226, 198, 198, 0.92);
 }
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}

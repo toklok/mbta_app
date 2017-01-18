@@ -8,8 +8,8 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :mbta_app, MbtaApp.Endpoint,
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  url: [host: "127.0.0.1:4443"],
-  https: [port: 4443,
+  url: [host: "127.0.0.1:4444"],
+  https: [port: 4444,
     keyfile: Path.expand("~/priv/keys/localhost.key", __DIR__),
     certfile: Path.expand("~/priv/keys/localhost.cert", __DIR__)],
   debug_errors: true,
