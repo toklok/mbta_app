@@ -2,7 +2,7 @@ import React from 'react';
 
 const Listing = (props) => {
   return (
-    <li>
+    <li className="listing-info">
       <h1 className="origin">Origin: { props.origin } </h1>
       <p className="trip">Trip #: { props.trip }</p>
       <h2 className="destination">Destination: { props.destination }</h2>

@@ -48,16 +48,17 @@ class Board extends React.Component {
           <section className="boarding-header">
             <h1 className="boarding-h1">MBTA Live Train Departures</h1>
           </section>
-          <section className="boarding-currentTime">
-          <span>Last Checked</span>
-          <time>{`${moment().format('h:mm:ss A')}`}</time>
+          <section className={this.state.hideLoc ? 'hidden' : 'boarding-currentTime'}>
+          <span className="last-checked">Last Checked</span>
+          <time className="currentTime">{`${moment().format('h:mm:ss A')}`}</time>
+          <p>Filter By available location:</p>
           </section>
-          <section className={this.state.hideLoc ? 'hidden' : ''}>
+          <section className={this.state.hideLoc ? 'hidden' : 'boarding-controls'}>
           <ul>
           {
             this.state.currentDest.map((key, index) => {
               return (
-                <li key={ index }><button onClick={ () => { this.sortTrainDestination(key); this.setState({ hideLoc: true })}}>{`${key}`}</button></li>
+                <li className="board-filter" key={ index }><button className="button-select" onClick={ () => { this.sortTrainDestination(key); this.setState({ hideLoc: true })}}>{`${key}`}</button></li>
               )
             })
           }

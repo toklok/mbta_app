@@ -25,21 +25,67 @@ html, body {
   text-align: center;
 }
 
+.boarding-currentTime {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.last-checked {
+  margin-right: 5px;
+}
+
 ul {
   margin-top: 10px;
 }
 
-li {
+
+.listing-info {
+  display: block;
   padding: 10px;
 }
 
-li:nth-child(even) {
+.listing-info:nth-child(even) {
   margin-top: 10px;
   margin-bottom: 10px;
   background: rgba(226, 198, 198, 0.92);
 }
 
+.board-filter {
+  display: block;
+  width: calc(99.9% * 1/3 - (30px - 30px * 1/3));
+}
+
+.board-filter:nth-child(1n) {
+   float: left;
+   margin-right: 30px;
+   clear: none;
+}
+
+.board-filter:last-child {
+   margin-right: 0;
+}
+
+.board-filter:nth-child(3n) {
+   margin-right: 0;
+   float: right;
+}
+
+.board-filter:nth-child(3n + 1) {
+   clear: both;
+}
+
+.button-select {
+    margin-bottom: 5px;
+}
+
+.boarding-controls {
+    /* cheap clearfix solution */
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 5px;
+}
+
 .hidden {
-  visibility: hidden;
-  height: 0;
+  display: none;
 }
